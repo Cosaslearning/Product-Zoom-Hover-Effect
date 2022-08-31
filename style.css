@@ -1,0 +1,178 @@
+/*-----------------  GOOGLE FONTS  -----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap');
+
+/*-----------------  VARIABLES  -----------------*/
+:root {
+    /* Colors */ 
+    --orange-color: rgb(246, 99, 53);
+    --white_color: rgb(255, 255, 255);
+}
+
+html {
+    font-size: 10px;
+    /* Now 1rem = 10px */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #1b1f29;
+}
+.card {
+    position: relative;
+    width: 30rem;
+    height: 40rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    margin-left: 10rem;
+    transition: 0.5s ease-in-out;
+}
+.card:hover {
+    width: 60rem;
+}
+.card .picbox {
+    position: relative;
+    width: 30rem;
+    height: 100%;
+    background:var(--white_color);
+    z-index: 2;
+}
+.card .picbox img {
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+    object-fit: cover;
+    transform: scale(0.9);
+    transition: 0.5s ease-in-out;
+}
+.card:hover .picbox img {
+    transform: scale(1);
+}
+.card .details {
+    position: absolute;
+    left: 0;
+    width: 30rem;
+    height: 100%;
+    background: var(--orange-color);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    z-index:1;
+}
+.card:hover .details {
+    left: 30rem;
+}
+.card .details h3 {
+    color: var(--white_color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 2rem;
+}
+.card .details h3 span {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: none;
+    opacity: 0.85;
+}
+.card .details h4 {
+    color: var(--white_color);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.6rem;
+}
+.card .details p {
+    color: var(--white_color);
+    opacity: 0.85;
+    font-size: 1.2rem;
+}
+.card .details .size {
+    display: flex;
+    gap: 1rem;
+}
+.card .details .size li {
+    list-style: none;
+    color: var(--white_color);
+    font-size: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    border: 0.2rem solid var(--white_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.card .details .size li:hover {
+    color: var(--orange-color);
+    background: var(--white_color);
+    opacity: 1;
+}
+.card .details .price {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+}
+.card .details .price h2 {
+    color: var(--white_color);
+    font-weight: 600;
+    font-size: 3.2rem;
+}
+.card .details .price h2 sup {
+    font-weight: 300;
+}
+.card .details .price h2 small {
+    font-size: 1.2rem;
+}
+.card .details .price a {
+    display: inline-flex;
+    padding: 1rem 2.5rem;
+    font-size: 1.6rem;
+    background: var(--white_color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--orange-color);
+}
+.card .details .price a:hover {
+    font-weight: 700;
+}
+.img-zoom-lens {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    width: 2rem; 
+    height: 2rem;
+    transform: translate(-50%,-50%);
+    background: rgba(245, 245, 245, 0.5);
+    border-radius: 50%;
+    z-index: 1000;
+}
+.img-zoom-result {
+    display: none;
+    position: absolute;
+    background: url(suit.jpg);
+    width: 35%;
+    height: 50%;    
+    margin-left: 60%;
+    border: 2px solid var(--orange-color);
+    z-index: 100;
+    background-repeat: no-repeat;
+}
